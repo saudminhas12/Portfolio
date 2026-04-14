@@ -1,10 +1,7 @@
-// Import useState hook from React — lets us track things that change (like hover state)
 import { useState } from "react";
 
-// ── YOUR PERSONAL INFO — edit these values to update the whole site ───────────
 const INFO = { name:"Saud Minhas", title:"Full Stack Developer", email:"minhassaud96@gmail.com", phone:"0309-6448993", location:"Lahore, Pakistan", github:"https://github.com/saudminhas12" };
 
-// ── YOUR SKILLS — Frontend shows in indigo, Backend shows in rose ─────────────
 const SKILLS = { Frontend:["HTML","CSS","Bootstrap","Tailwind","JavaScript","jQuery","React"], Backend:["PHP","Laravel","SQL"] };
 
 // ── YOUR PROJECTS — HOW TO EDIT: ─────────────────────────────────────────────
@@ -16,18 +13,19 @@ const SKILLS = { Frontend:["HTML","CSS","Bootstrap","Tailwind","JavaScript","jQu
 const PROJECTS = [
   { num:"01", name:"Project",   url:"https://github.com/saudminhas12/Project-11", tags:["HTML","CSS Advance"], desc:"Responsive landing page with HTML and CSS"  },
   { num:"02", name:"Project",   url:"https://github.com/saudminhas12/Project-16", tags:["React"], desc:"Live Exchange rate with REACT"},
-  { num:"03", name:"Project",   url:"https://github.com/saudminhas12/Project-20", tags:[,"PHP","Bootstrap"], desc:"News Portal with PHP and Bootstrap"  },
+  { num:"03", name:"Project",   url:"https://github.com/saudminhas12/Project-20", tags:["PHP","Bootstrap"], desc:"News Portal with PHP and Bootstrap"  },
 ];``
 
 // ── COLOURS — change these hex codes to restyle the whole site ────────────────
 const IND = "#6366f1"; // indigo  — used for links, highlights, frontend badges
 const ROS = "#f43f5e"; // rose    — used for backend skill badges
 const MUT = "#8888aa"; // muted   — used for secondary/grey text
+const HUG = "#040463"; // hugo   — a very dark shade, used for card bg on hover and nav bg
 
 // ── BADGE COMPONENT — a small coloured pill, used for skills and project tags ─
 // label = the text inside  |  color = the colour of the pill
 const Badge = ({label, color}) =>
-  <span style={{fontSize:12, padding:"3px 12px", borderRadius:20, fontWeight:600, background:color+"22", color, border:`1px solid ${color}44`}}>{label}</span>;
+ <span style={{fontSize:12, padding:"3px 12px", borderRadius:20, fontWeight:600, background:color+"22", color, border:`1px solid ${color}44`}}>{label}</span>;
 
 // ── CARD COMPONENT — one project card that glows and links to GitHub on click ─
 function Card({p}) {
@@ -38,10 +36,10 @@ function Card({p}) {
     <a href={p.url} target="_blank" rel="noopener noreferrer"
       onMouseEnter={()=>setH(true)}  // set h to true when mouse enters
       onMouseLeave={()=>setH(false)} // set h to false when mouse leaves
-      style={{display:"block", textDecoration:"none", borderRadius:12, padding:"1.25rem", transition:"all 0.2s",
+      style={{display:"block", textDecoration:"none", borderRadius:12, padding:"0.9rem", transition:"all 0.3s",
         background: h ? "#1e1e2e" : "#17171f",           // lighter bg on hover
-        border:     `1px solid ${h ? IND : "#2a2a38"}`,  // indigo border on hover
-        boxShadow:  h ? `0 0 20px ${IND}33` : "none"}}> {/* glow effect on hover */}
+        border:     `1px solid ${h ? HUG : "#2a2a38"}`,  // indigo border on hover
+        boxShadow:  h ? `20px 10px 20px ${IND}33` : "none"}}> {/* glow effect on hover */}
 
       {/* Top row: project number on the left, arrow icon on the right */}
       <div    style={{display:"flex", justifyContent:"space-between", marginBottom:8}}>

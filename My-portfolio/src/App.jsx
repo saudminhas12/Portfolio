@@ -72,7 +72,7 @@ export default function Portfolio() {
         <div style={{display:"flex", gap:"1.5rem", alignItems:"center"}}> 
           
           {["projects","skills","contact"].map(id =>
-            <button key={id} onClick={()=>go(id)} style={{background:"none", border:"none", color: MUT, cursor:"pointer",  fontSize:14, textDecoration:"none", textTransform:"capitalize"}}>{id}</button>)}
+            <button key={id} onClick={()=>go(id)} style={{background:"none", border:"none", color: MUT, cursor:"pointer",  fontSize:14, textTransform:"capitalize"}}>{id}</button>)}
           
           <a href={INFO.github} target="_blank" rel="noopener noreferrer" style={{background:IND, color:"#fff", padding:"7px 16px", borderRadius:8, fontSize:13, fontWeight:600, textDecoration:"none"}}>GitHub</a>
         </div>
